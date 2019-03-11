@@ -23,9 +23,10 @@ module.exports = function getLoveTrianglesCount(preferences = []) {
       let a=i;
       let b=preferences[a];
       let c=preferences[b];
-      if(preferences[c]==a && preferences[c]!=b && preferences[c]!=c) {countTriangle++; break;}
+      if(preferences[c]==a && preferences[c]!=b && preferences[c]!=c) {countTriangle++;}
     }
-    return countTriangle;
+    if(countTriangle%3) return countTriangle;
+    return countTriangle / 3;
   }
   return countTriangle;
 
